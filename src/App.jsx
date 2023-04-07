@@ -12,7 +12,14 @@ function App() {
       </div>
       <h1>Toma Kei wrong word calendar</h1>
       <div className="calendar">
-        <FullCalendar plugins={[dayGridPlugin]} initialView="dayGridMonth" />
+        <FullCalendar
+          plugins={[dayGridPlugin]}
+          initialView="dayGridMonth"
+          locale={"ja"} //日本語ローカライズの適応
+          buttonText={{ today: "今日" }} // 今日ボタンのローカライズがされてなかった
+          firstDay={1} // 週の初めを月曜日にする
+          // direction="rtl" // 日付の表示場所を左上にする 曜日の順番が反転してしまう
+        />
       </div>
     </div>
   );
