@@ -39,3 +39,9 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* 追記 */
+.fc-daygrid-day-top {
+  justify-content: flex-end;
+}
