@@ -4,8 +4,10 @@
 
 Rspack + React で動いています
 
+プロジェクトのフルパスに日本語が含まれると動かないらしい。
+
 ```sh
-# nodeバージョンはv18^
+# nodejsはv18.15.0
 # node moduleをインストール
 $ npm install
 
