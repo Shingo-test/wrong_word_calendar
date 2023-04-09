@@ -1,17 +1,17 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import reactLogo from "./assets/react.svg";
+import MainImage from "./MainImage";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <div className="wrong_word_image">
-        <img src={reactLogo} className="logo react" alt="React logo" />
-      </div>
-      <h1>Toma Kei wrong word calendar</h1>
-      <div className="calendar">
+      <h1>
+        Toma Kei wrong word <a href="#calendar">calendar</a>
+      </h1>
+      <MainImage />
+      <div className="calendar" id="calendar">
         <FullCalendar
           plugins={[dayGridPlugin]}
           initialView="dayGridMonth"
