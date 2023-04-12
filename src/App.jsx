@@ -2,6 +2,7 @@ import React from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import MainImage from "./MainImage";
+import WrongWord from "./WrongWord";
 import "./App.css";
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
       <h1>
         Toma Kei wrong word <a href="#calendar">calendar</a>
       </h1>
-      <MainImage />
+      {/* <MainImage /> */}
+      <WrongWord />
       <div className="calendar" id="calendar">
         <FullCalendar
           plugins={[dayGridPlugin]}
