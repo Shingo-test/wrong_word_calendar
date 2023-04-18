@@ -1,16 +1,18 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import WrongWord from "./WrongWord";
+import WrongWord, { randomIndex } from "./WrongWord";
 import "./App.css";
 
 function App() {
+  const WrongWordIndex = randomIndex();
+  // console.log(WrongWordIndex);
   return (
     <div className="App">
       <h1>
         Toma Kei wrong word <a href="#calendar">calendar</a>
       </h1>
-      <WrongWord />
+      <WrongWord index={WrongWordIndex} />
       <div className="calendar" id="calendar">
         <FullCalendar
           plugins={[dayGridPlugin]}
