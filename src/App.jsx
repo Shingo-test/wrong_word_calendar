@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const WrongWordIndex = Math.floor(Math.random() * WrongWordsLength);
-  console.log(WrongWordIndex);
+  // console.log(WrongWordIndex);
   return (
     <div className="App">
       <h1>
