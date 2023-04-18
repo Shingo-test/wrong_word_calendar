@@ -1,3 +1,5 @@
+import hanko from "./assets/img/hanko.png";
+
 class WW {
   constructor(wrong, correct) {
     this.wrong = wrong;
@@ -30,8 +32,13 @@ function WrongWord() {
   const index = Math.floor(rand);
   return (
     <>
-      <div className="wrong-word-text">{words[index].wrong}</div>
-      <div className="correct-word-text">{words[index].correct}</div>
+      <div className="word-box">
+        <div className="wrong-word-text">{words[index].wrong}</div>
+        <div className="hanko-box">
+          <div className="correct-word-text">{words[index].correct}</div>
+          <img className="hanko" src={hanko} />
+        </div>
+      </div>
     </>
   );
 }

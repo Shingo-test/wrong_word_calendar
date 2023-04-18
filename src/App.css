@@ -32,3 +32,54 @@
 .fc-daygrid-day-top {
   justify-content: flex-end;
 }
+
+/* 追記　斎藤 */
+@font-face {
+	font-family: "あいだフォント";
+	src: url(/assets/font/Pigmo-00.otf);
+}
+
+.word-box {
+	width: 100%;
+  height: 400px;
+  margin: 0 0 34px 0;
+  padding: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.wrong-word-text {
+  margin: auto;
+  padding-top: 40px;
+	font-family: "あいだフォント";
+	font-size: 4rem;
+  color: navy;
+  writing-mode: vertical-rl;
+  line-height: 70px;
+}
+
+.hanko-box {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.correct-word-text {
+  margin: 0 3rem 2rem auto;
+  font-weight: bold;
+  color: black;
+}
+
+.correct-word-text::before {
+  content: "訳：";
+}
+
+.hanko {
+  width: 70px;
+  height: auto;
+  margin: 0 auto 2rem 2rem;
+}
