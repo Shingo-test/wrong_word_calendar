@@ -1,11 +1,11 @@
 import React from "react";
 import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
-import WrongWord, { WrongWordsLength } from "./WrongWord";
+import WrongWord, { randomIndex } from "./WrongWord";
 import "./App.css";
 
 function App() {
-  const WrongWordIndex = Math.floor(Math.random() * WrongWordsLength);
+  const WrongWordIndex = randomIndex();
   // console.log(WrongWordIndex);
   return (
     <div className="App">

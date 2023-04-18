@@ -41,5 +41,14 @@ function WrongWord(props) {
     </>
   );
 }
+
 export default WrongWord;
 export const WrongWordsLength = words.length;
+
+/**
+ * ランダムでWrongWordのindexに入力可能な数値を生成する
+ * @returns number
+ */
+export function randomIndex() {
+  return Math.floor(Math.random() * words.length);
+}
