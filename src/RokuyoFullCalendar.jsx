@@ -9,7 +9,6 @@ import eventIcs from "./assets/zenbunka.ics";
 function RokuyoFullCalendar() {
   return (
     <div className="calendar" id="calendar">
-      <p>カレンダーテキストサイズ : {rokuyoArr.length}</p>
       <FullCalendar
         plugins={[dayGridPlugin, iCalendarPlugin]}
         initialView="dayGridMonth"
