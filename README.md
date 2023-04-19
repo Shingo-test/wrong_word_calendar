@@ -21,3 +21,11 @@ $ npm run build
 ## カレンダーについて
 
 [fullcalendar](https://fullcalendar.io/docs/react) を使ってる
+
+## 六曜データについて
+
+https://www.zenbunka.or.jp/software/entry/rokuyoucal.html
+
+禅文化研究所のカレンダー情報を使ってる。
+
+必要に応じて、`src/assets/zenbunka.ics`を更新する
