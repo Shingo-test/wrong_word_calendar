@@ -2,6 +2,7 @@ import FullCalendar from "@fullcalendar/react"; // must go before plugins
 import dayGridPlugin from "@fullcalendar/daygrid"; // a plugin!
 import iCalendarPlugin from "@fullcalendar/icalendar";
 import eventIcs from "./assets/zenbunka.ics";
+import "./RokuyoFullCalendar.css";
 
 // かれんだー情報をfetchするのは諦める
 // "https://calendar.google.com/calendar/ical/br7nsak3pjv3d379ddrf4bfgpo7splo1%40import.calendar.google.com/public/basic.ics";
