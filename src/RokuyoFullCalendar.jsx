@@ -17,6 +17,9 @@ function RokuyoFullCalendar() {
         buttonText={{ today: "今日" }} // 今日ボタンのローカライズがされてなかった
         firstDay={1} // 週の初めを月曜日にする
         events={{ url: eventIcs, format: "ics" }}
+        fixedWeekCount={false}
+        eventBorderColor="#ffffff00"
+        eventBackgroundColor="#ffffff00"
       />
     </div>
   );
