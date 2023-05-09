@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <h1>
-        Toma Kei wrong word <a href="#calendar">calendar</a>
+        Mistake Words <a href="#calendar">Calendar</a>
       </h1>
       <WrongWord index={WrongWordIndex} />
 
