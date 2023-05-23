@@ -1,3 +1,4 @@
+import { WordAnimation } from "./WordAnimation";
 import hanko from "./assets/img/hanko.png";
 
 class WW {
@@ -31,16 +32,19 @@ const words = [
 
 /**
  * indexにはWrongWordLength以下の整数のみ受け付けます
- * @param {index} props
+ * @param {{index:Number}} props
  * @returns
  */
 function WrongWord(props) {
+  const index = props.index;
   // console.log(props);
   return (
     <div className="word-box">
-      <div className="wrong-word-text">{words[props.index].wrong}</div>
+      <div className="wrong-word-text">
+        <WordAnimation word={words[index].wrong} />
+      </div>
       <div className="hanko-box">
-        <div className="correct-word-text">{words[props.index].correct}</div>
+        <div className="correct-word-text">{words[index].correct}</div>
         <img className="hanko" src={hanko} />
       </div>
     </div>
