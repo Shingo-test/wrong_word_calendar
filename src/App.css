@@ -33,11 +33,6 @@
   justify-content: flex-end;
 }
 
-/* 追記　斎藤 */
-@font-face {
-	font-family: "あいだフォント";
-	src: url(/assets/font/Pigmo-00.otf);
-}
 
 .word-box {
 	width: 100%;
@@ -53,9 +48,9 @@
 .wrong-word-text {
   margin: auto;
   padding-top: 40px;
-	font-family: "あいだフォント";
+  font-family: '游明朝 Medium', serif;
 	font-size: 4rem;
-  color: navy;
+  color: black;
   writing-mode: vertical-rl;
   line-height: 70px;
 }
@@ -75,7 +70,7 @@
 }
 
 .correct-word-text::before {
-  content: "訳：";
+  content: "正：";
 }
 
 .hanko {
