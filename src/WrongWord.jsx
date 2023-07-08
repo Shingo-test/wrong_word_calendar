@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { WordAnimation } from "./WordAnimation";
 import hanko from "./assets/img/hanko.png";
 
@@ -36,7 +37,19 @@ const words = [
  * @returns
  */
 function WrongWord(props) {
-  const index = props.index;
+  // const index = props.index;
+  const [index, setIndex] = useState(props.index);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newIndex = randomIndex();
+      setIndex(newIndex);
+      // console.log("time: " + Date.now() + ", index: " + newIndex);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [index]);
+
   // console.log(props);
   return (
     <div className="word-box">
