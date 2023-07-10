@@ -1,5 +1,7 @@
 .transitionChar {
   transition: all 0.5s ease-in;
+}
+.opacity_0 {
   opacity: 0;
 }
 .opacity_1 {

@@ -10,10 +10,9 @@ export function WordAnimation(props) {
   const word = props.word;
   const wordArr = word.split("");
 
-  const outWord = wordArr.map((str, index) => {
-    return <TransitionChar char={str} index={index} />;
+  return wordArr.map((str, index) => {
+    return <TransitionChar char={str} index={index} key={index} />;
   });
-  return <>{outWord}</>;
 }
 
 /**
@@ -24,8 +23,8 @@ function TransitionChar(props) {
   const index = props.index;
   const char = props.char;
   const cName = "transitionChar";
+  const [name, setName] = useState(cName + " opacity_0");
 
-  const [name, setName] = useState(cName);
   useEffect(() => {
     setTimeout(() => {
       setName(cName + " opacity_1");
