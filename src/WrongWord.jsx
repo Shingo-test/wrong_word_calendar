@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { WordAnimation } from "./WordAnimation";
-import hanko from "./assets/img/hanko.png";
+import stamp from "./assets/img/stamp.png";
+import "./WrongWord.css";
 
 class WW {
   constructor(wrong, correct) {
@@ -8,7 +10,7 @@ class WW {
   }
 }
 
-const words = [
+const data = [
   new WW("スラックス", "slack"),
   new WW("ハーウェイ", "Huawei（ファーウェイ）"),
   new WW("ご戻り", "お戻り"),
@@ -36,28 +38,55 @@ const words = [
  * @returns
  */
 function WrongWord(props) {
-  const index = props.index;
+  // const index = props.index;
+  const [index, setIndex] = useState(props.index);
+  const [wrongWord, setWrongWord] = useState(
+    <WordAnimation word={data[index].wrong} />
+  );
+  const [correctWord, setCorrectWord] = useState(data[index].correct);
+
+  useEffect(() => {
+    // ５秒に1回文字が切り替わる
+    const interval = setInterval(() => {
+      const newIndex = randomIndex();
+      setIndex(newIndex);
+      setWrongWord(<WordAnimation word={data[newIndex].wrong} />);
+      setCorrectWord(data[newIndex].correct);
+      // console.log("time: " + Date.now() + ", index: " + newIndex);
+    }, 5000);
+
+    // 4.9秒の段階で一度テキストを空にする
+    const resetInterval = setInterval(() => {
+      setWrongWord(<WordAnimation word="" />);
+    }, 4900);
+
+    return () => {
+      clearInterval(interval);
+      clearInterval(resetInterval);
+    };
+  }, []);
+
   // console.log(props);
   return (
     <div className="word-box">
-      <div className="wrong-word-text">
-        <WordAnimation word={words[index].wrong} />
+      <div className="wrong-word-box">
+        <div className="wrong-word-text">{wrongWord}</div>
       </div>
-      <div className="hanko-box">
-        <div className="correct-word-text">{words[index].correct}</div>
-        <img className="hanko" src={hanko} />
+      <div className="stamp-box">
+        <div className="correct-word-text">{correctWord}</div>
+        <img className="stamp" src={stamp} />
       </div>
     </div>
   );
 }
 
 export default WrongWord;
-export const WrongWordsLength = words.length;
+export const WrongWordsLength = data.length - 1;
 
 /**
  * ランダムでWrongWordのindexに入力可能な数値を生成する
  * @returns number
  */
 export function randomIndex() {
-  return Math.floor(Math.random() * words.length);
+  return Math.floor(Math.random() * WrongWordsLength);
 }

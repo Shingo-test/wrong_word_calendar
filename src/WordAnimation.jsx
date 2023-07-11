@@ -8,12 +8,11 @@ import "./WordAnimation.css";
  */
 export function WordAnimation(props) {
   const word = props.word;
-  const wordArr = word.split("");
+  const chars = word.split("");
 
-  const outWord = wordArr.map((str, index) => {
-    return <TransitionChar char={str} index={index} />;
+  return chars.map((char, index) => {
+    return <TransitionChar char={char} index={index} key={index} />;
   });
-  return <>{outWord}</>;
 }
 
 /**
@@ -24,8 +23,8 @@ function TransitionChar(props) {
   const index = props.index;
   const char = props.char;
   const cName = "transitionChar";
+  const [name, setName] = useState(cName + " opacity_0");
 
-  const [name, setName] = useState(cName);
   useEffect(() => {
     setTimeout(() => {
       setName(cName + " opacity_1");
