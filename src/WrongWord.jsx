@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { WordAnimation } from "./WordAnimation";
 import hanko from "./assets/img/hanko.png";
+import "./WrongWord.css";
 
 class WW {
   constructor(wrong, correct) {

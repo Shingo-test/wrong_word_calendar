@@ -1,3 +1,7 @@
+.fc-daygrid-day-top {
+  justify-content: flex-end;
+}
+
 .fc-day a {
   color: #ddd;
 }
