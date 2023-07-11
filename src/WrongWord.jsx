@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { WordAnimation } from "./WordAnimation";
-import hanko from "./assets/img/hanko.png";
+import stamp from "./assets/img/stamp.png";
 import "./WrongWord.css";
 
 class WW {
@@ -72,9 +72,9 @@ function WrongWord(props) {
       <div className="wrong-word-box">
         <div className="wrong-word-text">{wrongWord}</div>
       </div>
-      <div className="hanko-box">
+      <div className="stamp-box">
         <div className="correct-word-text">{correctWord}</div>
-        <img className="hanko" src={hanko} />
+        <img className="stamp" src={stamp} />
       </div>
     </div>
   );

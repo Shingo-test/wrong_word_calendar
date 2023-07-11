@@ -23,7 +23,7 @@
   height: 70px;
 }
 
-.hanko-box {
+.stamp-box {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -42,7 +42,7 @@
   content: "正：";
 }
 
-.hanko {
+.stamp {
   width: 70px;
   height: auto;
   margin: 0 10% 2rem auto;
@@ -57,7 +57,7 @@
     font-size: 1.3rem;
   }
 
-  .hanko {
+  .stamp {
     width: 40px;
     height: auto;
     margin: 0 2rem 30px auto;
