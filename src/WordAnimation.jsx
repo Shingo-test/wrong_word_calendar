@@ -8,10 +8,10 @@ import "./WordAnimation.css";
  */
 export function WordAnimation(props) {
   const word = props.word;
-  const wordArr = word.split("");
+  const chars = word.split("");
 
-  return wordArr.map((str, index) => {
-    return <TransitionChar char={str} index={index} key={index} />;
+  return chars.map((char, index) => {
+    return <TransitionChar char={char} index={index} key={index} />;
   });
 }
 

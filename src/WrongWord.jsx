@@ -29,7 +29,6 @@ const data = [
   new WW("＠葬儀時間", "＠葬儀事務局"),
   new WW("そうさつ", "相殺（そうさい）"),
   new WW("供花棚卸サービス", "供花卸サービス"),
-  new WW(" ", " "),
 ];
 
 /**
@@ -40,7 +39,7 @@ const data = [
 function WrongWord(props) {
   // const index = props.index;
   const [index, setIndex] = useState(props.index);
-  const [words, setWords] = useState(
+  const [wrongWord, setWrongWord] = useState(
     <WordAnimation word={data[index].wrong} />
   );
   const [correctWord, setCorrectWord] = useState(data[index].correct);
@@ -50,15 +49,14 @@ function WrongWord(props) {
     const interval = setInterval(() => {
       const newIndex = randomIndex();
       setIndex(newIndex);
-      setWords(<WordAnimation word={data[newIndex].wrong} />);
+      setWrongWord(<WordAnimation word={data[newIndex].wrong} />);
       setCorrectWord(data[newIndex].correct);
       // console.log("time: " + Date.now() + ", index: " + newIndex);
     }, 5000);
 
     // 4.9秒の段階で一度テキストを空にする
     const resetInterval = setInterval(() => {
-      // setIndex(data.length - 1);
-      setWords(<WordAnimation word="" />);
+      setWrongWord(<WordAnimation word="" />);
     }, 4900);
 
     return () => {
@@ -71,16 +69,10 @@ function WrongWord(props) {
   return (
     <div className="word-box">
       <div className="wrong-word-box">
-        <div className="wrong-word-text">
-          {/* <WordAnimation word={data[index].wrong} /> */}
-          {words}
-        </div>
+        <div className="wrong-word-text">{wrongWord}</div>
       </div>
       <div className="hanko-box">
-        <div className="correct-word-text">
-          {/* {data[index].correct} */}
-          {correctWord}
-        </div>
+        <div className="correct-word-text">{correctWord}</div>
         <img className="hanko" src={hanko} />
       </div>
     </div>
