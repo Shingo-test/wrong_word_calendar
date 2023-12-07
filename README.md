@@ -1,5 +1,11 @@
 # 言い間違えカレンダー
 
+## ホスティング
+
+Github IOでホスティングしています。
+
+https://shingo-test.github.io/wrong_word_calendar/
+
 ## 環境
 
 Rspack + React で動いています
